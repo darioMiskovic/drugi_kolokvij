@@ -15,7 +15,7 @@ class CreateUpisaniStudentiTable extends Migration
     {
         Schema::create('upisani_studenti', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("ekolegij_id")->constrained("ekolegij");
+            $table->foreignId("ekolegij_id")->constrained("ekolegij")->onDelete("cascade");
             $table->foreignId("studenti_id")->constrained("studenti");
 
         });
